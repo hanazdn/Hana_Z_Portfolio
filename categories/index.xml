@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hana Ziauddin Portfolio</title>
-    <link>https://hanazdn.github.io/Hana_Z_Portfolio/categories/</link>
+    <link>https://hanazdn.github.io/hana_z_portfolio/categories/</link>
     <description>Recent content in Categories on Hana Ziauddin Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://hanazdn.github.io/Hana_Z_Portfolio/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://hanazdn.github.io/hana_z_portfolio/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

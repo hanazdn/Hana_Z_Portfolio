@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hanazdn.github.io/Hana_Z_Portfolio/categories/</loc>
+    <loc>https://hanazdn.github.io/hana_z_portfolio/categories/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hanazdn.github.io/Hana_Z_Portfolio/</loc>
+    <loc>https://hanazdn.github.io/hana_z_portfolio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://hanazdn.github.io/Hana_Z_Portfolio/tags/</loc>
+    <loc>https://hanazdn.github.io/hana_z_portfolio/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
