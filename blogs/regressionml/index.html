@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href=https://hugo-profile.netlify.app/fav.png type="image/gif">
+<link rel="icon" href=/fav.png type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
 </noscript>
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/font.css" media="all">
+<link rel="stylesheet" href="/css/font.css" media="all">
 
 
 
@@ -42,11 +42,11 @@ Two regression models, linear regression and ridge regression, will be utilized 
 Two regression models, linear regression and ridge regression, will be utilized to train the dataset. The performance of both models will be compared through an evaluation of key metrics like Root Mean Square Error (RMSE) and the coefficient of determination (R^2)."/>
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://hugo-profile.netlify.app/css/header.css" media="all">
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/footer.css" media="all">
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/theme.css" media="all">
+<link rel="stylesheet" href="/css/theme.css" media="all">
 
 
 
@@ -104,10 +104,10 @@ Two regression models, linear regression and ridge regression, will be utilized 
 </style>
 
 <meta name="description" content="">
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/single.css">
+<link rel="stylesheet" href="/css/single.css">
 
 
-<script defer src="https://hugo-profile.netlify.app/fontawesome-5/all-5.15.4.js"></script>
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
 ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
@@ -143,9 +143,9 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
     <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
-            <a class="navbar-brand primary-font text-wrap" href="https://hugo-profile.netlify.app/">
+            <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="https://hugo-profile.netlify.app/fav.png" width="30" height="30"
+                <img src="/fav.png" width="30" height="30"
                     class="d-inline-block align-top">
                 Home
                 
@@ -179,7 +179,7 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#about" aria-label="about">
+                        <a class="nav-link" href="/#about" aria-label="about">
                             About Me
                         </a>
                     </li>
@@ -187,7 +187,7 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#experience"
+                        <a class="nav-link" href="/#experience"
                             aria-label="experience">
                             Experience
                         </a>
@@ -196,7 +196,7 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#education"
+                        <a class="nav-link" href="/#education"
                             aria-label="education">
                             Education
                         </a>
@@ -214,7 +214,7 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
                     
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/blogs" title="Projects">
+                        <a class="nav-link" href="/blogs" title="Projects">
                             
                             Projects
                         </a>
@@ -274,7 +274,7 @@ ML Regression Models: Song Popularity Predictor  | Hana Ziauddin Portfolio
           </div>
           
           <div class="featured-image">
-            <img class="img-fluid" src="https://hugo-profile.netlify.app/images/mathjax2.png" alt="ML Regression Models: Song Popularity Predictor ">
+            <img class="img-fluid" src="/images/mathjax2.png" alt="ML Regression Models: Song Popularity Predictor ">
           </div>
           
           <article class="page-content  p-2">
@@ -299,35 +299,35 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import cross_val_score, KFold
 </code></pre><p><strong>Step 2: EDA</strong></p>
 <pre tabindex="0"><code>df_music.info()
-</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/info.png"
+</code></pre><p><figure><img src="/images/info.png"
          alt="Image Alt Text"/>
 </figure>
 <br></p>
-<!-- <figure><img src="https://hugo-profile.netlify.app/images/info.png"
+<!-- <figure><img src="/images/info.png"
          alt="Image Alt Text"/><figcaption>
             <p>Image Caption Here</p>
         </figcaption>
 </figure>
  -->
 <pre tabindex="0"><code>df_music.head()
-</code></pre><figure><img src="https://hugo-profile.netlify.app/images/headcode.png"/>
+</code></pre><figure><img src="/images/headcode.png"/>
 </figure>
 
 <p><br><br>
 Using seaborn the top 8 genres were plotted against their popularity <br>
-<figure><img src="https://hugo-profile.netlify.app/images/top.png"/>
+<figure><img src="/images/top.png"/>
 </figure>
 
 <br><br>
 <strong>Correlation Heatmap</strong>
 Next lets plot a correlation heatmap to represent the data in df_music <br>
-<figure><img src="https://hugo-profile.netlify.app/images/heatmap.png"/>
+<figure><img src="/images/heatmap.png"/>
 </figure>
 <br><br>
 <strong>Scatter Matrix</strong>
 Using a scatter matrix allows us to analyze the relationship between the various features and the target variable in this case song popularity.
 From the matrix wee can see the most of the relationships are non-linear. <br>
-<figure><img src="https://hugo-profile.netlify.app/images/scatter.png"/>
+<figure><img src="/images/scatter.png"/>
 </figure>
 <br><br></p>
 <p><strong>Step 3: Pre-processing</strong><br>
@@ -337,12 +337,12 @@ From the matrix wee can see the most of the relationships are non-linear. <br>
 <pre tabindex="0"><code>music_dummies=pd.get_dummies(df_music[&#39;top genre&#39;],drop_first=True)
 print(music_dummies.head())
 </code></pre><p>Each genre category is now encoded as a 0 or 1. For example in row 102 the genre is &lsquo;dance pop&rsquo; therefore this column will contain a 1 with all other genre categories containing a 0.
-<br><figure><img src="https://hugo-profile.netlify.app/images/mdum.png"/>
+<br><figure><img src="/images/mdum.png"/>
 </figure>
 <br></p>
 <p><br>Bring these new columns into the df_music dataframe and display the appended df_music dataframe</p>
 <pre tabindex="0"><code>df_music=pd.concat([df_music,music_dummies],axis=1)
-</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/mdumnew.png"/>
+</code></pre><p><figure><img src="/images/mdumnew.png"/>
 </figure>
 <br>
 <strong>Step 4: Building a Linear Regression Model</strong><br>
@@ -357,11 +357,11 @@ y = df_music[&#34;pop&#34;].values
 <pre tabindex="0"><code>cv_results=cross_val_score(reg, X_train,y_train,cv=kf)
 cv_results_MSE=cross_val_score(reg, X_train,y_train,cv=kf,scoring=&#34;neg_mean_squared_error&#34;)
 </code></pre><p>Table below displays the R^2 and RMSE value across each cross-fold
-<figure><img src="https://hugo-profile.netlify.app/images/metrics1.png"/>
+<figure><img src="/images/metrics1.png"/>
 </figure>
 <br></p>
 <p>Below are the average results of R^2 and RMSE metrics after training using a linear regression model.
-<figure><img src="https://hugo-profile.netlify.app/images/metricnum1.png"/>
+<figure><img src="/images/metricnum1.png"/>
 </figure>
 </p>
 <p><br> R-squared (R²) measures the proportion of the variance in the dependent variable (in this case, &lsquo;popularity&rsquo;) that is explained by the independent variables (features) in the model. As we know R^2 ranges from 0-1 with higher values indicating a better fit. This means the linear regression model is performing poorly.</p>
@@ -384,7 +384,7 @@ for alpha in alphas:
        # Calculate RMSE for each fold
        rmse_scores = np.sqrt(-cross_val_score(ridge, X, y, cv=5, scoring=&#39;neg_mean_squared_error&#39;))
 </code></pre><p>For each alpha the average (across the 5 cross folds) R^2 and RMSE value was saved in a table
-<figure><img src="https://hugo-profile.netlify.app/images/alpha1.png"/>
+<figure><img src="/images/alpha1.png"/>
 </figure>
 <br></p>
 <p><strong>Evaluating Ridge Regression Metrics</strong><br></p>
@@ -470,7 +470,7 @@ The R^2 and RMSE values are of much more acceptable levels making ridge regressi
 <div class="progress">
   <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<Script src="https://hugo-profile.netlify.app/js/scrollProgressBar.js"></script>
+<Script src="/js/scrollProgressBar.js"></script>
 
 
 <script>
@@ -492,7 +492,7 @@ The R^2 and RMSE values are of much more acceptable levels making ridge regressi
 </script>
 
 
-<script src="https://hugo-profile.netlify.app/js/readingTime.js"></script>
+<script src="/js/readingTime.js"></script>
 
 
 
@@ -552,7 +552,7 @@ The R^2 and RMSE values are of much more acceptable levels making ridge regressi
         <div class="col-md-4 text-center">
             <div class="pb-2">
                 <a href="https://hugo-profile.netlify.app" title="Hana Ziauddin Portfolio">
-                    <img alt="Footer logo" src="https://hugo-profile.netlify.app/fav.png"
+                    <img alt="Footer logo" src="/fav.png"
                         height="40px" width="40px">
                 </a>
             </div>
@@ -570,7 +570,7 @@ The R^2 and RMSE values are of much more acceptable levels making ridge regressi
             </div>
         </div>
     </div>
-</div></footer><script src="https://hugo-profile.netlify.app/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
     if (document.body.className.includes("light")) {
         document.body.classList.add('dark');
@@ -596,7 +596,7 @@ The R^2 and RMSE values are of much more acceptable levels making ridge regressi
 </script>
 
 
-    <script src="https://hugo-profile.netlify.app/js/search.js"></script>
+    <script src="/js/search.js"></script>
 
 
 

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
-<link rel="icon" href=https://hugo-profile.netlify.app/fav.png type="image/gif">
+<link rel="icon" href=/fav.png type="image/gif">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
 </noscript>
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/font.css" media="all">
+<link rel="stylesheet" href="/css/font.css" media="all">
 
 
 
@@ -42,11 +42,11 @@ After training the model, we will evaluate its performance using a confusion mat
 After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions."/>
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://hugo-profile.netlify.app/css/header.css" media="all">
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/footer.css" media="all">
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
 
 
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/theme.css" media="all">
+<link rel="stylesheet" href="/css/theme.css" media="all">
 
 
 
@@ -104,10 +104,10 @@ After training the model, we will evaluate its performance using a confusion mat
 </style>
 
 <meta name="description" content="">
-<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/single.css">
+<link rel="stylesheet" href="/css/single.css">
 
 
-<script defer src="https://hugo-profile.netlify.app/fontawesome-5/all-5.15.4.js"></script>
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
 ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
@@ -143,9 +143,9 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
     <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
-            <a class="navbar-brand primary-font text-wrap" href="https://hugo-profile.netlify.app/">
+            <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="https://hugo-profile.netlify.app/fav.png" width="30" height="30"
+                <img src="/fav.png" width="30" height="30"
                     class="d-inline-block align-top">
                 Home
                 
@@ -179,7 +179,7 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#about" aria-label="about">
+                        <a class="nav-link" href="/#about" aria-label="about">
                             About Me
                         </a>
                     </li>
@@ -187,7 +187,7 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#experience"
+                        <a class="nav-link" href="/#experience"
                             aria-label="experience">
                             Experience
                         </a>
@@ -196,7 +196,7 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
 
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/#education"
+                        <a class="nav-link" href="/#education"
                             aria-label="education">
                             Education
                         </a>
@@ -214,7 +214,7 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
                     
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="https://hugo-profile.netlify.app/blogs" title="Projects">
+                        <a class="nav-link" href="/blogs" title="Projects">
                             
                             Projects
                         </a>
@@ -274,7 +274,7 @@ ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
           </div>
           
           <div class="featured-image">
-            <img class="img-fluid" src="https://hugo-profile.netlify.app/images/fraud.png" alt="ML Classifier Models: Fraud Detection">
+            <img class="img-fluid" src="/images/fraud.png" alt="ML Classifier Models: Fraud Detection">
           </div>
           
           <article class="page-content  p-2">
@@ -304,27 +304,27 @@ In this step we are reading in the credit card transactions dataset and understa
 data_trx.shape
 data_trx.info()
 data_trx.head()
-</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/fraud_info1.png"/>
+</code></pre><p><figure><img src="/images/fraud_info1.png"/>
 </figure>
 <br>
-<figure><img src="https://hugo-profile.netlify.app/images/fraud_head.png"/>
+<figure><img src="/images/fraud_head.png"/>
 </figure>
 <br></p>
 <pre tabindex="0"><code>
 Next lets breakdown the number of fraudulent cases in the dataset. &lt;br&gt;
-<figure><img src="https://hugo-profile.netlify.app/images/class_fraud.png"/>
+<figure><img src="/images/class_fraud.png"/>
 </figure>
 
 </code></pre><!-- image: "/images/me1.png" -->
 <p><strong>Correlation Heatmap</strong></p>
 <pre tabindex="0"><code>
 Next lets plot a correlation heatmap to represent the data in data_trx dataset &lt;br&gt;
-<figure><img src="https://hugo-profile.netlify.app/images/heatmap_fraud.png"/>
+<figure><img src="/images/heatmap_fraud.png"/>
 </figure>
 
 </code></pre><p><strong>Median fraudulent Purchase Price</strong>
 <br>
-<figure><img src="https://hugo-profile.netlify.app/images/histo_fraud.png"/>
+<figure><img src="/images/histo_fraud.png"/>
 </figure>
 <br><br></p>
 <p><strong>Step 3: Pre-processing</strong><br>
@@ -347,11 +347,11 @@ for neighbor in neighbors:
     train_accuracies[neighbor] = knn.score(X_train, y_train)
     test_accuracies[neighbor ]= knn.score(X_test, y_test)
 </code></pre><p><br>Printing the neighbor value and corresponding test accuracy as a percentage:</p>
-<pre tabindex="0"><code><figure><img src="https://hugo-profile.netlify.app/images/nebs_fraud.PNG"/>
+<pre tabindex="0"><code><figure><img src="/images/nebs_fraud.PNG"/>
 </figure>
 
 </code></pre><p>Visualizing the test accuracies with various k values</p>
-<pre tabindex="0"><code><figure><img src="https://hugo-profile.netlify.app/images/knn_fraud.png"/>
+<pre tabindex="0"><code><figure><img src="/images/knn_fraud.png"/>
 </figure>
 
 </code></pre><p><strong>Step 5: Evaluating Classifier Metrics</strong><br>
@@ -362,14 +362,14 @@ knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 
 precision_score(y_test, y_pred)
-</code></pre><figure><img src="https://hugo-profile.netlify.app/images/prec2.png"/>
+</code></pre><figure><img src="/images/prec2.png"/>
 </figure>
 
 <p><br>Importing the confusion matrix library and printing out the matrix</p>
 <pre tabindex="0"><code>from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, precision_score
 cm = confusion_matrix(y_test, y_pred)
 cm
-</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/prec.png"/>
+</code></pre><p><figure><img src="/images/prec.png"/>
 </figure>
 
 <strong>Interpreting the Confusion Matrix</strong><br></p>
@@ -382,7 +382,7 @@ This is the number of instances that are actually negative (non-fraud) and are c
 This is the number of instances that are actually negative but are incorrectly predicted as positive by the model. These are also known as Type I errors or &ldquo;false alarms.&rdquo;</p>
 <p><em>False Negatives (FN): 2,103</em><br>
 This is the number of instances that are actually positive (fraud) but are incorrectly predicted as negative by the model. These are also known as Type II errors or &ldquo;missed cases.&rdquo;</p>
-<figure><img src="https://hugo-profile.netlify.app/images/cmplot.png"/>
+<figure><img src="/images/cmplot.png"/>
 </figure>
 
 <p><strong>Recommendation</strong><br>
@@ -453,7 +453,7 @@ The model&rsquo;s precision score of 95% and the confusion matrix show that it&r
 <div class="progress">
   <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<Script src="https://hugo-profile.netlify.app/js/scrollProgressBar.js"></script>
+<Script src="/js/scrollProgressBar.js"></script>
 
 
 <script>
@@ -475,7 +475,7 @@ The model&rsquo;s precision score of 95% and the confusion matrix show that it&r
 </script>
 
 
-<script src="https://hugo-profile.netlify.app/js/readingTime.js"></script>
+<script src="/js/readingTime.js"></script>
 
 
 
@@ -535,7 +535,7 @@ The model&rsquo;s precision score of 95% and the confusion matrix show that it&r
         <div class="col-md-4 text-center">
             <div class="pb-2">
                 <a href="https://hugo-profile.netlify.app" title="Hana Ziauddin Portfolio">
-                    <img alt="Footer logo" src="https://hugo-profile.netlify.app/fav.png"
+                    <img alt="Footer logo" src="/fav.png"
                         height="40px" width="40px">
                 </a>
             </div>
@@ -553,7 +553,7 @@ The model&rsquo;s precision score of 95% and the confusion matrix show that it&r
             </div>
         </div>
     </div>
-</div></footer><script src="https://hugo-profile.netlify.app/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
 <script>
     if (document.body.className.includes("light")) {
         document.body.classList.add('dark');
@@ -579,7 +579,7 @@ The model&rsquo;s precision score of 95% and the confusion matrix show that it&r
 </script>
 
 
-    <script src="https://hugo-profile.netlify.app/js/search.js"></script>
+    <script src="/js/search.js"></script>
 
 
 
