@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KNN on Hana Ziauddin Portfolio</title>
+    <link>https://hugo-profile.netlify.app/tags/knn/</link>
+    <description>Recent content in KNN on Hana Ziauddin Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 19:53:33 +0530</lastBuildDate><atom:link href="https://hugo-profile.netlify.app/tags/knn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Classifier Models: Fraud Detection</title>
+      <link>https://hugo-profile.netlify.app/blogs/mathjax/</link>
+      <pubDate>Fri, 09 Dec 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/mathjax/</guid>
+      <description>In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.
+After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions.</description>
+    </item>
+    
+  </channel>
+</rss>
