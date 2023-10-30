@@ -28,14 +28,18 @@
 
 
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Text about my cool site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hugo-profile.netlify.app/404.html" /><meta property="og:site_name" content="test" />
+<meta property="og:title" content="ML Classifier Models: Fraud Detection" />
+<meta property="og:description" content="In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.
+After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/mathjax/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2022-12-09T19:53:33+05:30" />
+<meta property="article:modified_time" content="2022-12-09T19:53:33+05:30" /><meta property="og:site_name" content="test" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="Text about my cool site"/>
+<meta name="twitter:title" content="ML Classifier Models: Fraud Detection"/>
+<meta name="twitter:description" content="In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.
+After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions."/>
 
 
 <link rel="stylesheet" href="https://hugo-profile.netlify.app/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://hugo-profile.netlify.app/css/header.css" media="all">
@@ -99,10 +103,14 @@
     }
 </style>
 
-<meta name="description" content=Text&#32;about&#32;my&#32;cool&#32;site>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/single.css">
+
+
+<script defer src="https://hugo-profile.netlify.app/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
-Hana Ziauddin Portfolio | 404 page not found
+ML Classifier Models: Fraud Detection | Hana Ziauddin Portfolio
 
   </title>
 </head>
@@ -245,10 +253,231 @@ Hana Ziauddin Portfolio | 404 page not found
     </nav>
 </header>
 <div id="content">
-<div class="container py-5 text-center">
-    <img src="https://hugo-profile.netlify.app/404.png" alt='404 page not found' class="img-fluid" width="40%">
-    <h1>404 page not found</h1>
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">ML Classifier Models: Fraud Detection</h1>
+            <div class="text-center">
+              Hana Ziauddin 
+              <small>|</small>
+              Dec 9, 2022
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid" src="https://hugo-profile.netlify.app/images/fraud.png" alt="ML Classifier Models: Fraud Detection">
+          </div>
+          
+          <article class="page-content  p-2">
+          <!-- ## Mathjax -->
+<p>In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.</p>
+<p>After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions.</p>
+<!-- $$ | Pr_{x \leftarrow P_{1}} [A(x) = 1] - Pr_{x \leftarrow P_{2}} [A(x) = 1] | < \text{negligible} $$ -->
+<!-- Import Libraries:
+
+```
+$$ | Pr_{x \leftarrow P_{1}} [A(x) = 1] - Pr_{x \leftarrow P_{2}} [A(x) = 1] | < \text{negligible} $$
+```
+ -->
+<p><strong>Step 1: Import Libraries</strong></p>
+<pre tabindex="0"><code>import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+import seaborn as sns
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import cross_val_score, KFold
+</code></pre><p><strong>Step 2: EDA</strong>
+<br>
+In this step we are reading in the credit card transactions dataset and understanding the structure of the data. <br></p>
+<pre tabindex="0"><code>data_trx = pd.read_csv(r&#34;creditcard_trx.csv&#34;)
+data_trx.shape
+data_trx.info()
+data_trx.head()
+</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/fraud_info1.png"/>
+</figure>
+<br>
+<figure><img src="https://hugo-profile.netlify.app/images/fraud_head.png"/>
+</figure>
+<br></p>
+<pre tabindex="0"><code>
+Next lets breakdown the number of fraudulent cases in the dataset. &lt;br&gt;
+<figure><img src="https://hugo-profile.netlify.app/images/class_fraud.png"/>
+</figure>
+
+</code></pre><!-- image: "/images/me1.png" -->
+<p><strong>Correlation Heatmap</strong></p>
+<pre tabindex="0"><code>
+Next lets plot a correlation heatmap to represent the data in data_trx dataset &lt;br&gt;
+<figure><img src="https://hugo-profile.netlify.app/images/heatmap_fraud.png"/>
+</figure>
+
+</code></pre><p><strong>Median fraudulent Purchase Price</strong>
+<br>
+<figure><img src="https://hugo-profile.netlify.app/images/histo_fraud.png"/>
+</figure>
+<br><br></p>
+<p><strong>Step 3: Pre-processing</strong><br>
+<br>Read the features and target values into X and y respectivley</p>
+<pre tabindex="0"><code>X = data_trx.drop(&#34;fraud&#34;, axis=1).values
+y = data_trx[&#34;fraud&#34;].values
+</code></pre><p><br>This step will split the data into training and test sets</p>
+<pre tabindex="0"><code>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+</code></pre><p><strong>Step 4: Building a KNN Classifier Model</strong><br>
+This block of code creates an array of train and test accuracies, sets up a KNN Classifier, and loops through values of k from 2-30.</p>
+<pre tabindex="0"><code>neighbors = np.arange(2, 31)
+train_accuracies = {}
+test_accuracies = {}
+
+for neighbor in neighbors:
+
+    knn = KNeighborsClassifier(n_neighbors=neighbor)
+    knn.fit(X_train, y_train)
+
+    train_accuracies[neighbor] = knn.score(X_train, y_train)
+    test_accuracies[neighbor ]= knn.score(X_test, y_test)
+</code></pre><p><br>Printing the neighbor value and corresponding test accuracy as a percentage:</p>
+<pre tabindex="0"><code><figure><img src="https://hugo-profile.netlify.app/images/nebs_fraud.PNG"/>
+</figure>
+
+</code></pre><p>Visualizing the test accuracies with various k values</p>
+<pre tabindex="0"><code><figure><img src="https://hugo-profile.netlify.app/images/knn_fraud.png"/>
+</figure>
+
+</code></pre><p><strong>Step 5: Evaluating Classifier Metrics</strong><br>
+From the analysis we know that the optimal value for k=2. So lets evaluate the models performance metrics using this k value.</p>
+<pre tabindex="0"><code>knn = KNeighborsClassifier(n_neighbors=2)
+#knn = neighbors.KNeighborsClassifier(n_neighbors = 2)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+
+precision_score(y_test, y_pred)
+</code></pre><figure><img src="https://hugo-profile.netlify.app/images/prec2.png"/>
+</figure>
+
+<p><br>Importing the confusion matrix library and printing out the matrix</p>
+<pre tabindex="0"><code>from sklearn.metrics import classification_report, accuracy_score, confusion_matrix, precision_score
+cm = confusion_matrix(y_test, y_pred)
+cm
+</code></pre><p><figure><img src="https://hugo-profile.netlify.app/images/prec.png"/>
+</figure>
+
+<strong>Interpreting the Confusion Matrix</strong><br></p>
+<p>In the context of fraud detection or any binary classification problem, the confusion matrix is used to assess how well the model is performing in terms of identifying true cases (fraud) and true non-cases (non-fraud), as well as the errors (false positives and false negatives) it makes. The goal is to minimize false positives and false negatives while maximizing true positives and true negatives.</p>
+<p><em>True Positives (TP): 15,378</em><br>
+This is the number of instances that are actually positive (fraud cases) and are correctly predicted as positive by the model.</p>
+<p><em>True Negatives (TN): 181,761</em><br>
+This is the number of instances that are actually negative (non-fraud) and are correctly predicted as negative by the model.</p>
+<p><em>False Positives (FP): 758</em><br>
+This is the number of instances that are actually negative but are incorrectly predicted as positive by the model. These are also known as Type I errors or &ldquo;false alarms.&rdquo;</p>
+<p><em>False Negatives (FN): 2,103</em><br>
+This is the number of instances that are actually positive (fraud) but are incorrectly predicted as negative by the model. These are also known as Type II errors or &ldquo;missed cases.&rdquo;</p>
+<figure><img src="https://hugo-profile.netlify.app/images/cmplot.png"/>
+</figure>
+
+<p><strong>Recommendation</strong><br>
+The model&rsquo;s precision score of 95% and the confusion matrix show that it&rsquo;s doing an excellent job at accurately identifying positive cases (such as fraud) with very few false positives. This makes it well-suited for applications where precision is critical, like fraud detection.</p>
+<p><em>For more information head over to my Github</em></p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/machine-learning" target="_blank">Machine Learning</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/knn" target="_blank">KNN</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/confusion-matrix" target="_blank">Confusion Matrix</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=ML%20Classifier%20Models%3a%20Fraud%20Detection&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmathjax%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=ML%20Classifier%20Models%3a%20Fraud%20Detection: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmathjax%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=ML%20Classifier%20Models%3a%20Fraud%20Detection&amp;body=Check%20out%20this%20site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmathjax%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+<Script src="https://hugo-profile.netlify.app/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="https://hugo-profile.netlify.app/js/readingTime.js"></script>
+
+
 
   </div><footer>
     
@@ -354,6 +583,24 @@ Hana Ziauddin Portfolio | 404 page not found
 
 
 
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\[','\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        TeX: { equationNumbers: { autoNumber: "AMS" },
+             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+      }
+    });
+</script>
 
 
 

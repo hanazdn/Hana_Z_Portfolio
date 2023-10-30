@@ -28,14 +28,20 @@
 
 
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Text about my cool site" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hugo-profile.netlify.app/404.html" /><meta property="og:site_name" content="test" />
+<meta property="og:title" content="Email Data Scraping &amp; Analytics with Python" />
+<meta property="og:description" content="Web scraping to extract top email senders In this project, I&rsquo;m writing a Python script that will be used for extracting email data from a Gmail account, creating a Pandas DataFrame, and performing some data analysis and visualization. In the end we will be able to identify the email IDs of top senders.
+Step 1: Import Libraries
+import imaplib import email import getpass import pandas as pd from datetime import datetime from wordcloud import WordCloud import matplotlib." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/markdown-syntax/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2021-04-03T23:29:21+05:30" />
+<meta property="article:modified_time" content="2021-04-03T23:29:21+05:30" /><meta property="og:site_name" content="test" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="Text about my cool site"/>
+<meta name="twitter:title" content="Email Data Scraping &amp; Analytics with Python"/>
+<meta name="twitter:description" content="Web scraping to extract top email senders In this project, I&rsquo;m writing a Python script that will be used for extracting email data from a Gmail account, creating a Pandas DataFrame, and performing some data analysis and visualization. In the end we will be able to identify the email IDs of top senders.
+Step 1: Import Libraries
+import imaplib import email import getpass import pandas as pd from datetime import datetime from wordcloud import WordCloud import matplotlib."/>
 
 
 <link rel="stylesheet" href="https://hugo-profile.netlify.app/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="https://hugo-profile.netlify.app/css/header.css" media="all">
@@ -99,10 +105,14 @@
     }
 </style>
 
-<meta name="description" content=Text&#32;about&#32;my&#32;cool&#32;site>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://hugo-profile.netlify.app/css/single.css">
+
+
+<script defer src="https://hugo-profile.netlify.app/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
-Hana Ziauddin Portfolio | 404 page not found
+Email Data Scraping &amp; Analytics with Python | Hana Ziauddin Portfolio
 
   </title>
 </head>
@@ -245,10 +255,203 @@ Hana Ziauddin Portfolio | 404 page not found
     </nav>
 </header>
 <div id="content">
-<div class="container py-5 text-center">
-    <img src="https://hugo-profile.netlify.app/404.png" alt='404 page not found' class="img-fluid" width="40%">
-    <h1>404 page not found</h1>
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Email Data Scraping &amp; Analytics with Python</h1>
+            <div class="text-center">
+              Hana Ziauddin 
+              <small>|</small>
+              Apr 3, 2021
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid" src="https://hugo-profile.netlify.app/images/email.png" alt="Email Data Scraping &amp; Analytics with Python">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="web-scraping-to-extract-top-email-senders">Web scraping to extract top email senders</h2>
+<p>In this project, I&rsquo;m writing a Python script that will be used for extracting email data from a Gmail account, creating a Pandas DataFrame, and performing some data analysis and visualization. In the end we will be able to identify the email IDs of top senders.</p>
+<p><strong>Step 1: Import Libraries</strong></p>
+<pre tabindex="0"><code>import imaplib
+import email
+import getpass
+import pandas as pd
+from datetime import datetime
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+</code></pre><p><strong>Step 2: Connecting to the email account</strong>
+<br>
+In this step we are connecting the users gmail account. <br></p>
+<pre tabindex="0"><code>username = &#34;YourEmail@gmail.com&#34;
+password = &#34;YourPassword&#34;
+mail = imaplib.IMAP4_SSL(&#39;imap.gmail.com&#39;)
+mail.login(username, password)
+mail.select(&#34;inbox&#34;)
+</code></pre><p><strong>Step 3: EDA</strong>
+<br>
+In this step we are connecting the users gmail account. <br></p>
+<pre tabindex="0"><code>result, numbers = mail.uid(&#39;search&#39;, None, &#34;ALL&#34;)
+uids = numbers[0].split()
+uids = [id.decode(&#34;utf-8&#34;) for id in uids]
+uids = uids[-1:-3000:-1]
+result, messages = mail.uid(&#39;fetch&#39;, &#39;,&#39;.join(uids), &#39;(BODY[HEADER.FIELDS (SUBJECT FROM DATE)])&#39;)
+
+date_list = []
+from_list = []
+from_list1 = []
+date_list1 = []
+subject_text = []
+
+for i, message in messages[::2]:
+    msg = email.message_from_bytes(message)
+    decode = email.header.decode_header(msg[&#39;Subject&#39;])[0]
+    if isinstance(decode[0], bytes):
+        decoded = decode[0].decode(errors=&#39;ignore&#39;)
+        subject_text.append(decoded)
+    else:
+        subject_text.append(decode[0])
+    date_list.append(msg.get(&#39;date&#39;))
+    fromlist = msg.get(&#39;From&#39;)
+    fromlist = fromlist.split(&#34;&lt;&#34;)[0].replace(&#39;&#34;&#39;, &#39;&#39;)
+    from_list1.append(fromlist)
+
+date_list = pd.to_datetime(date_list)
+date_list1 = [item.isoformat(&#39; &#39;)[:-6] for item in date_list]
+</code></pre><p><strong>Step 4: Count and display top senders</strong>
+<br>
+In this step we are connecting the users gmail account. <br></p>
+<pre tabindex="0"><code>df = pd.DataFrame(data={&#39;Date&#39;: date_list1, &#39;Sender&#39;: from_list1, &#39;Subject&#39;: subject_text})
+
+sender_counts = df[&#39;Sender&#39;].value_counts()
+print(sender_counts.head(10))  # Display the top 10 senders
+</code></pre><p><strong>Step 5: Visualize the inbox</strong>
+<br>
+In this step we are using Wordcloud to see the most used words in the email subjects. <br></p>
+<pre tabindex="0"><code>df.to_csv(r&#39;C:\Users\User\Desktop\email_inbox.csv&#39;, index=False)
+
+df_description = df.describe()
+print(&#34;\nDataFrame Description:&#34;)
+print(df_description)
+
+text = &#34;&#34;
+for item in df[&#34;Subject&#34;]:
+    if isinstance(item, str):
+        text += &#34; &#34; + item
+    text = text.replace(&#34;&#39;&#34;, &#34;&#34;)
+    text = text.replace(&#34;,&#34;, &#34;&#34;)
+    text = text.replace(&#39;&#34;&#39;, &#39;&#39;)
+
+
+wordcloud = WordCloud(width=800, height=800, background_color=&#34;white&#34;)
+
+wordcloud.generate(text)
+plt.figure(figsize=(8, 8))
+plt.imshow(wordcloud, interpolation=&#34;bilinear&#34;)
+plt.axis(&#34;off&#34;)
+plt.margins(x=0, y=0)
+plt.title(&#34;Most Used Subject Words&#34;, fontsize=20, ha=&#34;center&#34;, pad=20)
+plt.show()
+</code></pre>
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/python" target="_blank">Python</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/web-scraping" target="_blank">Web Scraping</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/analytics" target="_blank">Analytics</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Email%20Data%20Scraping%20%26%20Analytics%20with%20Python&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmarkdown-syntax%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Email%20Data%20Scraping%20%26%20Analytics%20with%20Python: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmarkdown-syntax%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Email%20Data%20Scraping%20%26%20Analytics%20with%20Python&amp;body=Check%20out%20this%20site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fmarkdown-syntax%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+<Script src="https://hugo-profile.netlify.app/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="https://hugo-profile.netlify.app/js/readingTime.js"></script>
+
+
 
   </div><footer>
     

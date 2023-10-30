@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics on Hana Ziauddin Portfolio</title>
+    <link>https://hugo-profile.netlify.app/tags/analytics/</link>
+    <description>Recent content in Analytics on Hana Ziauddin Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Apr 2021 23:29:21 +0530</lastBuildDate><atom:link href="https://hugo-profile.netlify.app/tags/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Email Data Scraping &amp; Analytics with Python</title>
+      <link>https://hugo-profile.netlify.app/blogs/markdown-syntax/</link>
+      <pubDate>Sat, 03 Apr 2021 23:29:21 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/markdown-syntax/</guid>
+      <description>Web scraping to extract top email senders In this project, I&amp;rsquo;m writing a Python script that will be used for extracting email data from a Gmail account, creating a Pandas DataFrame, and performing some data analysis and visualization. In the end we will be able to identify the email IDs of top senders.
+Step 1: Import Libraries
+import imaplib import email import getpass import pandas as pd from datetime import datetime from wordcloud import WordCloud import matplotlib.</description>
+    </item>
+    
+  </channel>
+</rss>

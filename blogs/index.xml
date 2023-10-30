@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Hana Ziauddin Portfolio</title>
+    <link>https://hugo-profile.netlify.app/blogs/</link>
+    <description>Recent content in Blogs on Hana Ziauddin Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 19:53:33 +0530</lastBuildDate><atom:link href="https://hugo-profile.netlify.app/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Classifier Models: Fraud Detection</title>
+      <link>https://hugo-profile.netlify.app/blogs/mathjax/</link>
+      <pubDate>Fri, 09 Dec 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/mathjax/</guid>
+      <description>In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.
+After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions.</description>
+    </item>
+    
+    <item>
+      <title>ML Regression Models: Song Popularity Predictor </title>
+      <link>https://hugo-profile.netlify.app/blogs/regressionml/</link>
+      <pubDate>Fri, 09 Dec 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/regressionml/</guid>
+      <description>In this project, we will leverage a dataset containing various features like beats per minute (bpm), energy, decibels (dB), acoustic characteristics, and more. The objective is to employ these features to make predictions for the target variable, which is the popularity of songs.
+Two regression models, linear regression and ridge regression, will be utilized to train the dataset. The performance of both models will be compared through an evaluation of key metrics like Root Mean Square Error (RMSE) and the coefficient of determination (R^2).</description>
+    </item>
+    
+    <item>
+      <title>Email Data Scraping &amp; Analytics with Python</title>
+      <link>https://hugo-profile.netlify.app/blogs/markdown-syntax/</link>
+      <pubDate>Sat, 03 Apr 2021 23:29:21 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/markdown-syntax/</guid>
+      <description>Web scraping to extract top email senders In this project, I&amp;rsquo;m writing a Python script that will be used for extracting email data from a Gmail account, creating a Pandas DataFrame, and performing some data analysis and visualization. In the end we will be able to identify the email IDs of top senders.
+Step 1: Import Libraries
+import imaplib import email import getpass import pandas as pd from datetime import datetime from wordcloud import WordCloud import matplotlib.</description>
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>https://hugo-profile.netlify.app/blogs/emoji-support/</link>
+      <pubDate>Sat, 03 Apr 2021 22:53:58 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/emoji-support/</guid>
+      <description>Emoji can be enabled in a Hugo project in a number of ways. :zap:
+Emoji Support The emojify function can be called directly in templates or Inline Shortcodes.
+To enable emoji globally, set enableEmoji to true in your site’s configuration and then you can type emoji shorthand codes directly in content files; e.g.
+The Emoji cheat sheet is a useful reference for emoji shorthand codes.
+N.B. The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform.</description>
+    </item>
+    
+    <item>
+      <title>Placeholder Text</title>
+      <link>https://hugo-profile.netlify.app/blogs/placeholder-text/</link>
+      <pubDate>Sat, 03 Apr 2021 22:41:10 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/placeholder-text/</guid>
+      <description>Lorem est tota propiore conpellat pectoribus de pectora summo.
+Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
+Exierant elisi ambit vivere dedere Duce pollice Eris modo Spargitque ferrea quos palude Rursus nulli murmur; hastile inridet ut ab gravi sententia!</description>
+    </item>
+    
+    <item>
+      <title>Rich Content</title>
+      <link>https://hugo-profile.netlify.app/blogs/rich-content/</link>
+      <pubDate>Sat, 03 Apr 2021 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/rich-content/</guid>
+      <description>Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
+Gist Simple Shortcode {{&amp;lt; gist spf13 7896402 &amp;#34;img.html&amp;#34; &amp;gt;}} Twitter Simple Shortcode {{&amp;lt; tweet GoHugoIO 1315233626070503424 &amp;gt;}} Profile is a customizable single-page portfolio theme for Hugo featuring a contact form and blog. Made by @gurusabarishh.https://t.co/KwYcwfdy16
+&amp;mdash; GoHugo.io (@GoHugoIO) October 11, 2020 Vimeo Simple Shortcode {{&amp;lt; vimeo 146022717 &amp;gt;}} Youtube Simple Shortcode {{&amp;lt; youtube w7Ft2ymGmfc &amp;gt;}} Theme Custom Shortcodes These shortcodes are not Hugo built-ins, but are provided by the theme.</description>
+    </item>
+    
+  </channel>
+</rss>
