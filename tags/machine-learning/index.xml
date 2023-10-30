@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Hana Ziauddin Portfolio</title>
+    <link>https://hugo-profile.netlify.app/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Hana Ziauddin Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 19:53:33 +0530</lastBuildDate><atom:link href="https://hugo-profile.netlify.app/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML Classifier Models: Fraud Detection</title>
+      <link>https://hugo-profile.netlify.app/blogs/mathjax/</link>
+      <pubDate>Fri, 09 Dec 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/mathjax/</guid>
+      <description>In this project, a dataset containing credit card transactions is examined with the goal of training and testing a machine learning classifier models: K-Nearest Neighbors (KNN). The objective is to predict which transactions are likely to be fraudulent.
+After training the model, we will evaluate its performance using a confusion matrix and accuracy metrics. This assessment will help us determine if the model is a suitable choice for accurately identifying fraudulent transactions.</description>
+    </item>
+    
+    <item>
+      <title>ML Regression Models: Song Popularity Predictor </title>
+      <link>https://hugo-profile.netlify.app/blogs/regressionml/</link>
+      <pubDate>Fri, 09 Dec 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://hugo-profile.netlify.app/blogs/regressionml/</guid>
+      <description>In this project, we will leverage a dataset containing various features like beats per minute (bpm), energy, decibels (dB), acoustic characteristics, and more. The objective is to employ these features to make predictions for the target variable, which is the popularity of songs.
+Two regression models, linear regression and ridge regression, will be utilized to train the dataset. The performance of both models will be compared through an evaluation of key metrics like Root Mean Square Error (RMSE) and the coefficient of determination (R^2).</description>
+    </item>
+    
+  </channel>
+</rss>
